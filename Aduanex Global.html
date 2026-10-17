@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aduanex Global | Asesoría aduanera y logística para exportadores de Huaral</title>
+<meta name="description" content="Asesoría digital en trámites aduaneros, regímenes y logística de exportación para productores y microempresas de Huaral, Lima, Perú.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== COLORES Y AJUSTES (edita aquí la paleta) ===== */
+:root{
+  --navy:#0b2545;      /* azul marino principal */
+  --navy-2:#13315c;
+  --green:#1f8a4c;     /* verde agro */
+  --green-soft:#e7f4ec;
+  --accent:#f59e0b;    /* naranja/dorado de botones */
+  --accent-dark:#d98600;
+  --ink:#1b2430;
+  --muted:#53606f;
+  --bg:#ffffff;
+  --bg-alt:#f4f7fa;
+  --line:#dde4ec;
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e8edf3; --muted:#a9b6c4; --bg:#0d1722; --bg-alt:#111f2d; --line:#223344; --green-soft:#12301f;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px;-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+section{padding:4.5rem 0}
+.alt{background:var(--bg-alt)}
+h1,h2,h3{line-height:1.2;font-weight:700}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);color:var(--navy);margin-bottom:.75rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) h2{color:#fff}}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:2rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* ===== ENCABEZADO ===== */
+header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:700;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.brand svg{width:26px;height:26px;color:var(--accent)}
+nav ul{display:none;list-style:none;gap:1.4rem}
+nav a{text-decoration:none;font-size:.92rem;font-weight:500;opacity:.9}
+nav a:hover{opacity:1;color:var(--accent)}
+.burger{background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
+.burger svg{width:26px;height:26px}
+nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:64px;background:var(--navy);padding:1rem 1.25rem 1.5rem;gap:1rem;border-top:1px solid #ffffff22}
+@media(min-width:820px){nav ul{display:flex;position:static}.burger{display:none}}
+
+/* ===== BOTONES ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--accent);color:#1b1200;font-weight:600;text-decoration:none;padding:.95rem 1.6rem;border-radius:999px;font-size:1.02rem;box-shadow:0 6px 18px #f59e0b44;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 10px 24px #f59e0b55}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-lg{padding:1.1rem 2rem;font-size:1.1rem}
+
+/* ===== PORTADA ===== */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 60%,#0f4c3a 100%);color:#fff;padding:4rem 0 5rem;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2rem,8vw,3.4rem);margin-bottom:1rem}
+.hero p{font-size:1.1rem;opacity:.92;max-width:48ch;margin-bottom:2rem}
+.hero small{display:block;margin-top:1rem;opacity:.75;font-size:.85rem}
+/* Ruta de exportación: Huaral → mundo */
+.route{width:100%;max-width:440px;justify-self:center}
+.route .path{stroke-dasharray:6 8;animation:dash 2.5s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-56}}
+@media(min-width:820px){.hero .wrap{grid-template-columns:1.2fr 1fr}}
+
+/* ===== TARJETAS ===== */
+.grid{display:grid;gap:1.1rem}
+@media(min-width:640px){.grid.c2{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid.c4{grid-template-columns:repeat(4,1fr)}.grid.c3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0b25451a;border-color:var(--green)}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;margin-bottom:1rem}
+.ico svg{width:28px;height:28px}
+.card h3{font-size:1.05rem;margin-bottom:.4rem;color:var(--navy)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .card h3{color:#fff}}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* ===== SOBRE NOSOTROS ===== */
+.about{display:grid;gap:2rem}
+@media(min-width:820px){.about{grid-template-columns:1.3fr 1fr;align-items:center}}
+.mission{background:var(--navy);color:#fff;border-radius:var(--radius);padding:1.8rem;border-left:6px solid var(--accent)}
+.mission h3{margin-bottom:.5rem}
+.mission p{opacity:.92}
+
+/* ===== PÚBLICO ===== */
+.who .card{text-align:center}
+.who .ico{margin-inline:auto}
+
+/* ===== CONTACTO ===== */
+.contact{background:linear-gradient(160deg,var(--navy),#0f4c3a);color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact .lead{color:#ffffffcc;margin-inline:auto}
+.info{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 2rem;margin-bottom:2rem;font-weight:500}
+.info span{display:inline-flex;align-items:center;gap:.5rem}
+.info svg{width:22px;height:22px;color:var(--accent)}
+
+/* ===== PIE ===== */
+footer{background:#07182e;color:#cfd8e3;text-align:center;padding:2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));font-size:.9rem}
+footer strong{color:#fff}
+
+/* ===== BOTÓN FLOTANTE ===== */
+.wa-float{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:max(1rem,env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px #0000004d;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px}
+
+/* ===== ANIMACIÓN AL HACER SCROLL ===== */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .route .path{animation:none}
+  .btn,.card,.wa-float{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Íconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></symbol>
+  <symbol id="i-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2 3c2 0 3-1 4-1s2 1 3 1 2-1 3-1 2 1 4 1l2-3-2-5H5z"/><path d="M8 12V7h8v5M12 4v3"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><path d="M7 6v12M12 6v12M17 6v12"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2M10 6h4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 5-14 15-14 0 10-5 15-14 14zM5 19l7-7"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9v0a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M5 12v8h14v-8"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.800 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.500V16c3 2.500 9 2.500 12 0v-4.500"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C8.800 3 3 8.800 3 16c0 2.300.6 4.500 1.700 6.400L3 29l6.800-1.800A13 13 0 1 0 16 3zm0 23.700c-2 0-3.900-.6-5.600-1.600l-.4-.2-4 1.100 1.100-3.900-.3-.4A10.700 10.700 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200s-.8 1-1 1.200c-.2.200-.4.200-.7.100-1.900-.9-3.100-1.700-4.300-3.700-.3-.5.300-.5.900-1.700.1-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.200-1.200 2.900s1.200 3.400 1.400 3.600c.2.200 2.400 3.700 5.900 5.200 2.200.9 3 1 4.100.8.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.2-.3-.3-.6-.4z"/></symbol>
+</svg>
+
+<!-- 1. ENCABEZADO -->
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Aduanex Global, inicio">
+      <svg aria-hidden="true"><use href="#i-globe"/></svg> Aduanex Global
+    </a>
+    <nav id="nav" aria-label="Menú principal">
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Sobre nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#publico">¿A quiénes ayudamos?</a></li>
+        <li><a href="#ventajas">¿Por qué elegirnos?</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- 2. PORTADA -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>Exporta desde Huaral con seguridad y sin enredos</h1>
+      <p>Te orientamos de forma digital en trámites, regímenes aduaneros y logística para que tu producto llegue al mundo.</p>
+      <a class="btn btn-lg" data-wa href="https://wa.me/51904158560" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true"><use href="#i-wa"/></svg> Escríbenos por WhatsApp
+      </a>
+      <small>Respondemos tus dudas de exportación de forma clara y cercana.</small>
+    </div>
+    <!-- Ilustración: ruta de exportación -->
+    <svg class="route" viewBox="0 0 400 300" role="img" aria-label="Ruta de exportación desde Huaral hacia el mundo">
+      <circle cx="285" cy="115" r="78" fill="#ffffff12" stroke="#ffffff55" stroke-width="2"/>
+      <ellipse cx="285" cy="115" rx="32" ry="78" fill="none" stroke="#ffffff44" stroke-width="2"/>
+      <path d="M207 115h156M217 80h136M217 150h136" stroke="#ffffff44" stroke-width="2"/>
+      <path class="path" d="M60 235 C130 120 190 205 270 110" fill="none" stroke="#f59e0b" stroke-width="3.500" stroke-linecap="round"/>
+      <circle cx="60" cy="235" r="9" fill="#1f8a4c" stroke="#fff" stroke-width="3"/>
+      <circle cx="270" cy="110" r="9" fill="#f59e0b" stroke="#fff" stroke-width="3"/>
+      <text x="60" y="265" fill="#fff" font-size="15" font-weight="600" text-anchor="middle" font-family="Poppins,sans-serif">Huaral</text>
+      <g transform="translate(250 235)"><rect width="110" height="44" rx="8" fill="#ffffff1c" stroke="#ffffff66"/><path d="M14 8v28M34 8v28M54 8v28M74 8v28M94 8v28" stroke="#1f8a4c" stroke-width="5"/></g>
+    </svg>
+  </div>
+</section>
+
+<!-- 3. SOBRE NOSOTROS -->
+<section id="nosotros">
+  <div class="wrap about">
+    <div class="reveal">
+      <h2>Sobre nosotros</h2>
+      <p class="lead" style="margin-bottom:1rem">Somos Aduanex Global, un equipo de estudiantes de Administración de Negocios Internacionales del Instituto de Educación Superior IDEX Huando, en Huaral, Lima.</p>
+      <p style="color:var(--muted);max-width:60ch">Conocemos de cerca la realidad de los productores de nuestra provincia. Por eso explicamos el comercio exterior con palabras sencillas, para que cada exportador sepa qué hacer y por qué.</p>
+    </div>
+    <div class="mission reveal">
+      <h3>Nuestra misión</h3>
+      <p>Apoyar a los exportadores locales de Huaral con asesoría aduanera y logística clara, accesible y digital, para que exporten con confianza.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SERVICIOS -->
+<section id="servicios" class="alt">
+  <div class="wrap">
+    <h2 class="reveal">Nuestros servicios</h2>
+    <p class="lead reveal">Brindamos asesoría y orientación. Te explicamos cada paso para que tomes buenas decisiones.</p>
+    <div class="grid c4">
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></div><h3>Trámites y regímenes aduaneros</h3><p>Te explicamos qué es cada régimen aduanero y cómo funcionan los trámites de exportación.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-ship"/></svg></div><h3>Logística de exportación</h3><p>Orientación sobre transporte, embalaje, contenedores y rutas para enviar tu carga.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-box"/></svg></div><h3>Documentos y requisitos</h3><p>Información sobre los documentos y requisitos que necesitas para exportar tu producto.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></div><h3>Acompañamiento digital</h3><p>Te guiamos paso a paso por WhatsApp, sin traslados ni largas esperas.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ¿A QUIÉNES VA DIRIGIDO? -->
+<section id="publico" class="who">
+  <div class="wrap">
+    <h2 class="reveal">¿A quiénes ayudamos?</h2>
+    <p class="lead reveal">Trabajamos con quienes producen y venden en Huaral y quieren llegar a mercados del exterior.</p>
+    <div class="grid c3">
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-globe"/></svg></div><h3>Exportadores de Huaral</h3><p>Si ya exportas o estás por empezar, te ayudamos a ordenar tus procesos.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-leaf"/></svg></div><h3>Productores agrícolas</h3><p>Para quienes cultivan y quieren que su cosecha llegue a otros países.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-store"/></svg></div><h3>Microempresas y emprendedores</h3><p>Para negocios pequeños que dan sus primeros pasos en el comercio exterior.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 6. ¿POR QUÉ ELEGIRNOS? -->
+<section id="ventajas" class="alt">
+  <div class="wrap">
+    <h2 class="reveal">¿Por qué elegirnos?</h2>
+    <div class="grid c4" style="margin-top:1.5rem">
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-chat"/></svg></div><h3>Atención digital</h3><p>Te atendemos por WhatsApp, cuando lo necesites y desde donde estés.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></div><h3>Cercanía local</h3><p>Somos de Huaral y entendemos las necesidades de nuestros productores.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-eye"/></svg></div><h3>Información clara</h3><p>Sin tecnicismos: explicamos todo en un lenguaje fácil de entender.</p></article>
+      <article class="card reveal"><div class="ico"><svg aria-hidden="true"><use href="#i-cap"/></svg></div><h3>Formación académica</h3><p>Nos formamos en Negocios Internacionales en el IDEX Huando.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CONTACTO -->
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <h2 class="reveal">Conversemos sobre tu exportación</h2>
+    <p class="lead reveal">Cuéntanos qué quieres exportar y te orientamos en los siguientes pasos.</p>
+    <div class="info reveal">
+      <span><svg aria-hidden="true"><use href="#i-phone"/></svg> <span id="phone-text">WhatsApp: 904 158 560</span></span>
+      <span><svg aria-hidden="true"><use href="#i-pin"/></svg> Huaral, Lima, Perú</span>
+    </div>
+    <a class="btn btn-lg reveal" data-wa href="https://wa.me/51904158560" target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true"><use href="#i-wa"/></svg> Escríbenos por WhatsApp
+    </a>
+  </div>
+</section>
+</main>
+
+<!-- 8. PIE DE PÁGINA -->
+<footer>
+  <div class="wrap">
+    <p><strong>Aduanex Global</strong> · Asesoría aduanera y logística</p>
+    <p>Instituto de Educación Superior IDEX Huando · Huaral, Perú · <span id="year">2026</span></p>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a class="wa-float" data-wa href="https://wa.me/51904158560" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Aduanex Global">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<script>
+/* ===== CONFIGURACIÓN (edita aquí) ===== */
+var WA_NUMERO  = "51904158560"; // código de país 51 + número, sin espacios ni +
+var WA_MENSAJE = "Hola, soy exportador de Huaral y me gustaría recibir información sobre el servicio de asesoría aduanera y logística de Aduanex Global.";
+
+/* Arma el enlace wa.me con el mensaje codificado y lo aplica a todos los botones */
+var waUrl = "https://wa.me/" + WA_NUMERO + "?text=" + encodeURIComponent(WA_MENSAJE);
+document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = waUrl; });
+
+/* Año automático en el pie */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Menú móvil */
+var nav = document.getElementById("nav"), burger = document.getElementById("burger");
+burger.addEventListener("click", function () {
+  var open = nav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+nav.querySelectorAll("a").forEach(function (a) {
+  a.addEventListener("click", function () { nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); });
+});
+
+/* Animación suave al hacer scroll */
+var items = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  items.forEach(function (el) { io.observe(el); });
+} else { items.forEach(function (el) { el.classList.add("in"); }); }
+</script>
+</body>
+</html>
